@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan-1></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #2d3748; 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px; 
+            text-align: center;
+        }
+        h1 {
+            color: #90cdf4; 
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 28px;
+        }
+        button {
+            background-color: #667eea;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #5a67d8; 
+            transform: translateY(-2px);
+        }
+        #greetingMessage {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #4a5568; 
+            border-radius: 10px;
+            color: #e2e8f0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ucapan Selamat Pagi/Siang/Malam</h1>
+        <button onclick="displayGreeting()">Tampilkan Ucapan</button>
+        <div id="greetingMessage">Klik tombol di atas!</div>
+    </div>
+
+    <script>
+        function displayGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting;
+
+            if (hour >= 5 && hour < 12) {
+                greeting = "Selamat Pagi!";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "Selamat Siang!";
+            } else {
+                greeting = "Selamat Malam!";
+            }
+
+            const greetingMessageDiv = document.getElementById('greetingMessage');
+            greetingMessageDiv.textContent = greeting;
+        }
+    </script>
+</body>
+</html>
